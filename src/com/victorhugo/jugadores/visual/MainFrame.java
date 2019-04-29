@@ -9,21 +9,27 @@ import java.util.Enumeration;
 public class MainFrame extends JFrame {
 
     /**
-     * Constructor de la clase.
+     * Class constructor.
+     * @param title gets a String who is the title of the program.
      * */
     public MainFrame(String title){
+
+        //Change the Look and Feel for TabbedPane
         try
         {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
-            UIManager.put("TabbedPane.tabsOpaque",true);
             UIManager.put("TabbedPane.selected",tabColor);
             UIManager.put("TabbedPane.shadow",bgColor);
             UIManager.put("TabbedPane.unselectedBackground",bgColor);
             UIManager.put("TabbedPane.unselectedTabBackground",bgColor);
             UIManager.put("TabbedPane.contentAreaColor",tabColor);
-        } catch (Exception ee){
-            ee.printStackTrace();
+            UIManager.put("TabbedPane.unselectedTabShadow",bgColor);
+            UIManager.put("TabbedPane.highlight",bgColor);
+            UIManager.put("TabbedPane.unselectedTabHighlight",bgColor);
+        } catch (Exception e){
+            e.printStackTrace();
         }
+
         this.title = title;
 
         setLayout(null);
